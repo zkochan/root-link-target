@@ -11,16 +11,18 @@ module.exports = (filePath) => {
 
   return new Promise((resolve, reject) => {
     (function can () {
-      canLink(filePath, pathTemp(dir)).then((result) => {
-        if (result) {
-          resolve(dir)
-        } else if (dir === end) {
-          reject(new Error(`${filePath} cannot be linked to anywhere`))
-        } else {
-          dir = nextPath(dir, end)
-          can()
-        }
-      })
+      canLink(filePath, pathTemp(dir))
+        .then((result) => {
+          if (result) {
+            resolve(dir)
+          } else if (dir === end) {
+            reject(new Error(`${filePath} cannot be linked to anywhere`))
+          } else {
+            dir = nextPath(dir, end)
+            can()
+          }
+        })
+        .catch(reject)
     }())
   })
 }
