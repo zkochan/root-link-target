@@ -17,7 +17,7 @@ npm i -S root-link-target
 ```js
 const rootLinkTarget = require('root-link-target')
 
-canLink.sync('C:\\sub\\dir\\foo.txt')
+rootLinkTarget.sync('C:\\sub\\dir\\foo.txt')
 //> C:\\
 ```
 
