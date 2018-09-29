@@ -1,3 +1,5 @@
+> this package has been moved to https://github.com/zkochan/packages/tree/master/root-link-target
+
 # root-link-target
 
 > Gets the shortest directory to which a file can be linked
